@@ -14,11 +14,16 @@ def home(request):
             return redirect('home')
         else:
             return render(request, 'login/index.html', {'error': 'Sorry. The Username and Passwords do not match.'})
-    list=dir(request)
-    for i in list:
-        print(i)
+    else:
+        if request.user.is_authenticated:
+            return render(request,"data/data.html",{'name':request.user})
+        else:
+            return render(request, 'login/index.html',{})
+
+
+
     
-    return render(request,"data/data.html",{'name':request.user})
+    
 
 def login_request(request):
     pass

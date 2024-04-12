@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* Horizontal alignment for web */
+        align-items: center; /* Vertical alignment for mobile */
+    }
+    .card {
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .text {
+        margin-bottom: 10px;
+    }
+    h3 {
+        text-transform: capitalize;
+      }
+      </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharma Company - Welcome</title>
-    <style>
-        /* CSS styles for the landing page */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <h3>Welcome {{name}}</h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout_request' %}">logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
-    <header>
-        <h1>Welcome {{name}} to Pulse Pharmaceuticals.ltd </h1>
-
-        <p>Leading the way in healthcare innovation</p>
-        <a href="#about" class="btn">Learn More</a>
-    </header>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-        <p>Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero.</p>
-        <p>Suspendisse feugiat. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.</p>
-    </section>
-
-    <!-- Add more sections for products, services, testimonials, etc. -->
-
-    <footer>
-        <p>&copy; 2024 Pharma Company. All rights reserved.</p>
-    </footer>
+    <div class="card">
+        <h2>Card 1</h2>
+        <div class="text">Text 1</div>
+        <div class="text">Text 2</div>
+        <div class="text">Text 3</div>
+        <div class="text">Text 4</div>
+    </div>
+    <div class="card">
+        <h2>Card 2</h2>
+        <div class="text">Text 1</div>
+        <div class="text">Text 2</div>
+        <div class="text">Text 3</div>
+        <div class="text">Text 4</div>
+    </div>
+    <div class="card">
+        <h2>Card 3</h2>
+        <div class="text">Text 1</div>
+        <div class="text">Text 2</div>
+        <div class="text">Text 3</div>
+        <div class="text">Text 4</div>
+    </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
