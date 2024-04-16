@@ -23,20 +23,37 @@
     .text {
         margin-bottom: 10px;
     }
-    h3 {
+    h4 {
         text-transform: capitalize;
       }
+      .custom-table {
+    width: 100%;
+    margin-bottom: 0;
+}
+.custom-table th,
+.custom-table td {
+    border: 1px solid rgb(122, 122, 122); /* Add borders to table cells */
+
+    text-align: center; /* Align text to the left */
+    
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+ 
       </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Pulse</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <h3>Welcome {{name}}</h3>
+        <h4>{{name}} HQ: {{HQ}} REGION:{{REGION}} DIV:{{DIVISION}}</h4>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,27 +79,52 @@
 
 <div class="container">
     <div class="card">
-        <h2>Card 1</h2>
-        <div class="text">Text 1</div>
-        <div class="text">Text 2</div>
-        <div class="text">Text 3</div>
+        <h2>MONTH{{MONTH}}</h2>
+        <div class="text">
+            BASE: {{BASE}} CATEGORY: {{CATEGORY}} GROUP: {{GROUP}}
+        </div>
+        <div class="text">INCENTIVE ELIGIBILITY= {{INCENTIVE_ELIGIBILITY}} {{QUALIFY}}</div>
+        <div class="text">MIN. SECONDARY REQUIRED= {{SECONDARY_REQUIRED}}</div>
         <div class="text">Text 4</div>
     </div>
+    
     <div class="card">
-        <h2>Card 2</h2>
-        <div class="text">Text 1</div>
-        <div class="text">Text 2</div>
-        <div class="text">Text 3</div>
-        <div class="text">Text 4</div>
+        <h2>MONTH {{ MONTH }}</h2>
+        <div class="text">
+            BASE: {{ BASE }} CATEGORY: {{ CATEGORY }} GROUP: {{ GROUP }}
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                        <th>Column 4</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <!-- Add more data rows as needed -->
+                    </tr>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <!-- Add more data rows as needed -->
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="card">
-        <h2>Card 3</h2>
-        <div class="text">Text 1</div>
-        <div class="text">Text 2</div>
-        <div class="text">Text 3</div>
-        <div class="text">Text 4</div>
-    </div>
-</div>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
