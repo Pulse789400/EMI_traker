@@ -22,7 +22,7 @@ class BaseSales(models.Model):
     Group = models.CharField(max_length=10, blank=True)
     Final_Base_PCPM = models.DecimalField(
             max_digits=17,  # 10 digits before the decimal point + 5 digits after the decimal point
-            decimal_places=2,  # 5 digits after the decimal point
+            decimal_places=0,  # 5 digits after the decimal point
                     )
     Date=models.DateField(
             # YYYY-MM-DD format
