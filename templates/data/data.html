@@ -18,6 +18,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(1, 96, 133, 0.164);
     }
+    
     h2 {
         text-align: center;
         margin-bottom: 20px;
@@ -25,6 +26,11 @@
     .text {
         margin-bottom: 10px;
     }
+    .text b {
+    font-weight: bold;
+     /* You can change this color to whatever you prefer */
+}
+
     h4 {text-align: center;
         text-transform: capitalize;
         margin-right: 10px;
@@ -95,7 +101,7 @@
     <div class="card">
         <h2>APR-24</h2>
         <div class="text">
-            BASE: ₹ {{data.Final_Base_PCPM}}, CATEGORY: {{ data.Category }}, GROUP: {{ data.Group }}
+            <b>BASE:</b> ₹ {{data.Final_Base_PCPM}}, <b>CATEGORY:</b> {{ data.Category }}, <b>GROUP:</b> {{ data.Group }}
         </div>
         <div class="table-responsive">
             <p1>INCENTIVE ELIGIBILITY</p1>
@@ -158,10 +164,10 @@
     <div class="card">
         <h2>APR-24</h2>
         <div class="text">
-            BASE: ₹ {{data.Final_Base_PCPM}}, CATEGORY: {{ data.Category }}, GROUP: {{ data.Group }}
+            <b>BASE:</b> ₹ {{data.Final_Base_PCPM}}, <b>CATEGORY:</b> {{ data.Category }}, <b>GROUP:</b> {{ data.Group }}
         </div>
-        <div class="text">INCENTIVE ELIGIBILITY= ₹ {{sales.incentive}} {{QUALIFY}}</div>
-        <div class="text">MIN. SECONDARY REQUIRED= ₹ {{sales.sales}}</div>
+        <div class="text"><b>INCENTIVE ELIGIBILITY=</b> ₹ {{sales.incentive}} {{QUALIFY}}</div>
+        <div class="text"><b>MIN. SECONDARY REQUIRED=</b> ₹ {{sales.sales}}</div>
         
     </div>
     {% endif %}
