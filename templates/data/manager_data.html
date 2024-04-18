@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* Horizontal alignment for web */
+        align-items: center; /* Vertical alignment for mobile */
+    }
+    .card {
+        width: auto;
+        padding: 10px;
+        margin: 10px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(1, 96, 133, 0.164);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .text {
+        margin-bottom: 10px;
+    }
+    h4 {
+        text-transform: capitalize;
+        margin-right: 10px;
+      }
+      p{
+        margin-top: 1%;
+        text-align: center;
+      }
+      .custom-table {
+    width: 100%;
+    margin-bottom: 0;
+}
+.custom-table th,
+.custom-table td {
+    border: 1px solid rgb(122, 122, 122); /* Add borders to table cells */
+
+    text-align: center; /* Align text to the left */
+    
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+ 
+      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse</title>
+    
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <h4>{{name}}</h4>
+        <p> HQ: {{profile.Head_Quarter}} ,REGION:{{profile.Region}} ,DIV:{{profile.Division}}</P>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout_request' %}">logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    {%if data.Category == 'GT' %}
+    <div class="card">
+        <h2>APR-24</h2>
+        <div class="text">
+            BASE: ₹ {{data.Final_Base_PCPM}}, CATEGORY: {{ data.Category }}, GROUP: {{ data.Group }}
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>10%</th>
+                        <th>20%</th>
+                        <th>30%</th>
+                        <th>40%</th>
+                        <th>50%</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr>
+                        <td>₹{{table.10}}</td>
+                        <td>₹{{table.20}}</td>
+                        <td>₹{{table.30}}</td>
+                        <td>₹{{table.40}}</td>
+                        <td>₹{{table.50}}</td>
+                        <!-- Add more data rows as needed -->
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <p>MIN. SECONDARY_REQUIRED</p>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>10%</th>
+                        <th>20%</th>
+                        <th>30%</th>
+                        <th>40%</th>
+                        <th>50%</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr>
+                        <td>₹{{sales.Sales1}}</td>
+                        <td>₹{{sales.Sales2}}</td>
+                        <td>₹{{sales.Sales3}}</td>
+                        <td>₹{{sales.Sales4}}</td>
+                        <td>₹{{sales.Sales5}}</td>
+                        <!-- Add more data rows as needed -->
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {%else%}
+
+    <div class="card">
+        <h2>APR-24</h2>
+        <div class="text">
+            BASE: ₹ {{data.Final_Base_PCPM}}, CATEGORY: {{ data.Category }}, GROUP: {{ data.Group }}
+        </div>
+        <div class="text">INCENTIVE ELIGIBILITY= {{INCENTIVE_ELIGIBILITY}} {{QUALIFY}}</div>
+        <div class="text">MIN. SECONDARY REQUIRED= {{SECONDARY_REQUIRED}}</div>
+        <div class="text">Text 4</div>
+    </div>
+    {% endif %}
+    
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
