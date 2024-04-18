@@ -18,7 +18,10 @@ def home(request):
             return render(request, 'login/index.html', {'error': 'Sorry. The Username and Passwords do not match.'})
     else:
         if request.user.is_authenticated and request.user.userprofile.Design =='BM':
-            pass
+            context={'name':request.user.first_name,
+        'profile': request.user.userprofile
+        }
+            return render(request,"data/manager_data.html",context)
             
         elif(request.user.is_authenticated):
             Group=BaseSales.objects.filter(Division=request.user.userprofile.Division,Head_Quarter=request.user.userprofile.Head_Quarter)[0].Group
