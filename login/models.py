@@ -27,3 +27,15 @@ class BaseSales(models.Model):
     Date=models.DateField(
             # YYYY-MM-DD format
         )
+class MonthPCPMSales(models.Model):
+    Division = models.CharField(max_length=10, blank=True)
+    Region = models.CharField(max_length=10, blank=True)
+    Head_Quarter= models.CharField(max_length=10, blank=True)
+    Secondary_Sales_PCPM= models.DecimalField(
+            max_digits=17,  # 17 digits before the decimal point + 5 digits after the decimal point
+            decimal_places=0,  # 5 digits after the decimal point
+                    )
+    Date=models.DateField(
+            # YYYY-MM-DD format
+        )
+    

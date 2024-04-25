@@ -177,6 +177,26 @@
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
+            <h2>SECONDARY</h2>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Sales</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in sales_data %}
+                <tr>
+                    <td>{{x.Date|date:"M Y"}}</td>
+                    <td>₹{{x.Secondary_Sales_PCPM}}</td>
+                    <!-- Add more data rows as needed -->
+                </tr>
+                {% endfor %}
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
             <br>
             <div class="happy">Happy Incentive Earning!</div>
             
@@ -193,8 +213,29 @@
         </div>
         <div class="text"><b>INCENTIVE ELIGIBILITY<sup class="superscript-color">*</sup>=</b> ₹ {{sales.incentive}} {{QUALIFY}}</div>
         <div class="text"><b>MIN. SECONDARY REQUIRED=</b> ₹ {{sales.sales}}</div><br>
+        <h2>SECONDARY</h2>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Sales</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in sales_data %}
+                <tr>
+                    <td>{{x.Date|date:"M Y"}}</td>
+                    <td>₹{{x.Secondary_Sales_PCPM}}</td>
+                    <!-- Add more data rows as needed -->
+                </tr>
+                {% endfor %}
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
         <div class="happy">Happy Incentive Earning!</div>
         <div class="tac"><sup class="superscript-color">*</sup>Terms & Conditions Apply!</div>
+        
         
     </div>
     {% endif %}
